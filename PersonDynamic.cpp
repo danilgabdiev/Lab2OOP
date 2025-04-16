@@ -39,13 +39,32 @@ public:
   ~Person() {
     cout << "~Person()" << " | " << name << ", " << age << '\n';
   }
+
+  string GetName() {
+    return name;
+  }
+
+  int GetAge() {
+    return age;
+  }
+
+  void Clear();
 };
+
+void Person::Clear() {
+  name = "Deleted";
+  age = -1;
+}
 
 int main() {
   Person *p1 = new Person;
   Person *p2 = new Person("Danil", 20);
   Person *p3 = new Person(*p2);
   
+  cout << p2->GetName() << ' ' << p2->GetAge() << '\n';
+  p2->Clear();
+  cout << p2->GetName() << ' ' << p2->GetAge() << '\n';
+
   vector<Person> people;
   Person* p4 = new Person;
   people.push_back(move(*p4));
