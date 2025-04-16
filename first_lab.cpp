@@ -13,7 +13,7 @@ protected:
 public:
   Person() {
     cout << "Person()\n";
-    name = "Неизвестный";
+    name = "Unknown";
     age = 0;
   }
 
@@ -37,7 +37,7 @@ public:
   }
 
   ~Person() {
-    cout << "~Person()\n";
+    cout << "~Person()" << " | " << name << ", " << age << '\n';
   }
 };
 
